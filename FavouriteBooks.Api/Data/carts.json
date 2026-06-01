@@ -1,0 +1,15 @@
+[
+  {
+    "id": "463d6e00-d96a-4d92-820b-08d4dd7e0648",
+    "customerId": null,
+    "sessionId": "guest-session-001",
+    "items": [
+      {
+        "bookId": "3d163b32-52f7-4c5d-a1ef-ec1dad40d00a",
+        "quantity": 1,
+        "unitPriceSnapshot": 84.95
+      }
+    ],
+    "lastUpdatedUtc": "2026-06-01T05:42:07.6151383Z"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "id": "97d77d8a-a5ce-49dd-b5ef-82f1676d7a00",
+    "name": "Software Architecture",
+    "description": "Books about software architecture and design."
+  },
+  {
+    "id": "f3c8f6a7-626d-476a-bf4e-285516701601",
+    "name": "Programming",
+    "description": "General programming and engineering books."
+  },
+  {
+    "id": "cb705433-43ce-4732-9355-4f2558dcf6a9",
+    "name": "Business",
+    "description": "Books related to business and entrepreneurship."
+  }
+]

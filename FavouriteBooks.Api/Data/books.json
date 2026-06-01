@@ -1,0 +1,59 @@
+[
+  {
+    "id": "3d163b32-52f7-4c5d-a1ef-ec1dad40d00a",
+    "isbn": "9780321125217",
+    "title": "Domain-Driven Design",
+    "author": "Eric Evans",
+    "description": "Tactical and strategic guidance for complex domain modelling.",
+    "format": "Paperback",
+    "price": 84.95,
+    "stockQuantity": 12,
+    "isActive": true,
+    "categoryIds": [
+      "97d77d8a-a5ce-49dd-b5ef-82f1676d7a00",
+      "f3c8f6a7-626d-476a-bf4e-285516701601"
+    ]
+  },
+  {
+    "id": "348f7825-bd2e-46ea-94fb-c84329d19ec2",
+    "isbn": "9780134494166",
+    "title": "Clean Architecture",
+    "author": "Robert C. Martin",
+    "description": "Practical design principles for layered and maintainable systems.",
+    "format": "Paperback",
+    "price": 67.5,
+    "stockQuantity": 8,
+    "isActive": true,
+    "categoryIds": [
+      "97d77d8a-a5ce-49dd-b5ef-82f1676d7a00"
+    ]
+  },
+  {
+    "id": "7bfcf2e0-7d96-4f30-9237-8e8409831c1b",
+    "isbn": "9781617294532",
+    "title": "ASP.NET Core in Action",
+    "author": "Andrew Lock",
+    "description": "A hands-on guide to building ASP.NET Core web applications and APIs.",
+    "format": "Paperback",
+    "price": 79.9,
+    "stockQuantity": 10,
+    "isActive": true,
+    "categoryIds": [
+      "f3c8f6a7-626d-476a-bf4e-285516701601"
+    ]
+  },
+  {
+    "id": "95f7c0dc-58f3-4265-aa6a-bcd66898ce53",
+    "isbn": "9780241551837",
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "description": "Product and venture management lessons for growing businesses.",
+    "format": "Hardcover",
+    "price": 29.95,
+    "stockQuantity": 15,
+    "isActive": true,
+    "categoryIds": [
+      "cb705433-43ce-4732-9355-4f2558dcf6a9"
+    ]
+  }
+]

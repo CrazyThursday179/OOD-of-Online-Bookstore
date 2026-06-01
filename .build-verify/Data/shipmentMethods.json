@@ -1,0 +1,18 @@
+[
+  {
+    "id": "c6d1b7a7-09f5-4d2a-8fd5-12e23db2af30",
+    "name": "Standard Shipping",
+    "description": "Budget-friendly shipping across Australia.",
+    "cost": 9.95,
+    "estimatedDeliveryDays": 5,
+    "isActive": true
+  },
+  {
+    "id": "46727e06-f4ef-4b4f-a5a0-fad49888fd9f",
+    "name": "Express Shipping",
+    "description": "Faster shipping for urgent orders.",
+    "cost": 16.5,
+    "estimatedDeliveryDays": 2,
+    "isActive": true
+  }
+]

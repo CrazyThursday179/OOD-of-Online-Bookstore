@@ -1,0 +1,8 @@
+**/bin/
+**/obj/
+.appdata/
+.codex_extracts/
+.app-run.log
+.app-run.err.log
+IMPLEMENTATION_NOTES.md
+ARCHITECTURE_NOTES.md

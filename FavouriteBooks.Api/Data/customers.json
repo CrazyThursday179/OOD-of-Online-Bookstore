@@ -1,0 +1,17 @@
+[
+  {
+    "id": "7c9b2d29-ded5-480a-bdad-a96dbf4cc3e2",
+    "firstName": "Ava",
+    "lastName": "Chen",
+    "email": "ava.chen@example.com",
+    "defaultAddress": {
+      "recipientName": "Ava Chen",
+      "streetLine1": "25 Glenferrie Road",
+      "streetLine2": null,
+      "city": "Hawthorn",
+      "state": "VIC",
+      "postcode": "3122",
+      "country": "Australia"
+    }
+  }
+]
