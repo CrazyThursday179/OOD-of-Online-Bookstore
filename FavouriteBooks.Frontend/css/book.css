@@ -1,0 +1,136 @@
+main {
+  background-color: #F9F6F0;
+  margin: 0;
+  padding: 20px;
+  margin-bottom: 0;
+  padding-bottom: 40px;
+}
+
+/* ---- Back Button ---- */
+#back-btn {
+  background-color: #A8C5A0;
+  border: none;
+  color: black;
+  padding: 10px 15px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 20px;
+  transition: transform 0.2s;
+}
+
+#back-btn:hover {
+  background-color: #7BAE7F;
+  transform: scale(1.1);
+}
+
+/* ---- Book Layout ---- */
+.book-details {
+  display: flex;
+  gap: 40px;
+  padding: 20px 40px;
+  align-items: flex-start;
+}
+
+/* ---- Book Image ---- */
+.book-image {
+  width: 300px;
+  min-width: 300px;
+  height: 450px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  color: #A8C5A0;
+}
+
+/* ---- Book Info ---- */
+.book-info {
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#book-title {
+  font-size: 32px;
+  margin: 0 0 8px 0;
+  color: #2E7D32;
+}
+
+#book-author {
+  font-size: 18px;
+  color: #666;
+  margin: 0 0 20px 0;
+  font-style: italic;
+}
+
+#book-description {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #E0E0E0;
+}
+
+#book-genre {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+#book-stock {
+  font-size: 14px;
+  color: #2E7D32;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+#book-price {
+  font-size: 28px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+#quantity-label {
+  font-size: 14px;
+  color: #444;
+  margin-right: 10px;
+}
+
+#quantity-select {
+  padding: 8px 12px;
+  font-size: 16px;
+  color: #444;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-right: 35px;
+}
+
+#add-to-cart-btn {
+  padding: 12px 24px;
+  background-color: #E8955A;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s, transform 0.2s;
+}
+
+#add-to-cart-btn:hover {
+  background-color: #C1440E;
+  transform: scale(1.05);
+}
+
+#add-to-cart-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}

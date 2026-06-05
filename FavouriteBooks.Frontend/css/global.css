@@ -54,6 +54,27 @@ main {
   padding: 10px 15px;
   cursor: pointer;
   transition: transform 0.2s;
+  position: relative;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #2E7D32;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.cart-badge.hidden {
+  display: none;
 }
 
 nav ul {
@@ -105,7 +126,6 @@ a.active {
   overflow-y: auto;
   box-sizing: border-box;
 }
-
 
 .cart-header {
   display: flex;

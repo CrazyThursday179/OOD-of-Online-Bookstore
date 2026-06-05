@@ -4,6 +4,26 @@ import { getCart, updateCartItem, removeCartItem } from './api.js';
 let isCartOpen = false;
 
 /**
+ * Updates the cart badge count in the nav.
+ * Shows the total quantity of all items in the cart.
+ * Hides the badge if the cart is empty.
+ * @param {Object} cart - The cart object returned from the backend.
+ */
+function updateCartBadge(cart) {
+  const badge = document.getElementById('cart-badge');
+  if (!badge) return;
+
+  const totalQuantity = cart && cart.totalQuantity ? cart.totalQuantity : 0;
+
+  if (totalQuantity > 0) {
+    badge.textContent = totalQuantity;
+    badge.classList.remove('hidden');
+  } else {
+    badge.classList.add('hidden');
+  }
+}
+
+/**
  * Renders the cart items into the #cart-items element.
  * Displays each item with its title, price, quantity controls,
  * and a remove button. Shows an empty message if the cart has no items.
@@ -51,6 +71,7 @@ async function refreshCart() {
   try {
     const cart = await getCart();
     renderCart(cart);
+    updateCartBadge(cart);
     if (isCartOpen) {
       document.getElementById('cart-popout').classList.remove('hidden');
     }
@@ -88,6 +109,9 @@ function initCart() {
   if (sessionStorage.getItem('cartOpen') === 'true') {
     openCart();
   }
+
+  // Load badge count on page load
+  refreshCart();
   
   // Use event delegation on the header so the listener survives nav re-renders
   document.getElementById('guest-nav').addEventListener('click', (e) => {
