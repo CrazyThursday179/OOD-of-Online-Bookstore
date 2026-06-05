@@ -34,11 +34,21 @@ builder.Services.AddScoped<PayPalPayment>();
 builder.Services.AddScoped<AfterpayPayment>();
 builder.Services.AddScoped<PaymentStrategyFactory>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://127.0.0.1:5500", "http://localhost:5500")
+            .AllowAnyHeader().AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 await SeedDataService.InitializeAsync(app.Services);
 
 app.UseHttpsRedirection();
+app.UseCors();
 app.MapControllers();
 
 app.Run();
