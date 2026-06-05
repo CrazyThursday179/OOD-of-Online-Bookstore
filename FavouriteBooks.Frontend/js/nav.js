@@ -87,6 +87,7 @@ function renderNav() {
   // Cart is available to all users including guests
   const cartIcon = `<button id="cart-btn" type="button" aria-label="Open cart">
     <i class="fa-solid fa-cart-shopping"></i>
+    <span id="cart-badge" class="cart-badge hidden">0</span>
   </button>`;
 
   const signOutBtn = role !== 'guest'
