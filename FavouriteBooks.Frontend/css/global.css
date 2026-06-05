@@ -7,6 +7,10 @@ body {
   flex-direction: column;
 }
 
+.hidden {
+  display: none !important;
+}
+
 main {
   flex: 1;
 }

@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": "8e93cb44-b97c-4a41-aaec-d28f48b02e27",
+    "orderId": "74426bb5-f02e-4693-bb1d-b86672d86e01",
+    "invoiceNumber": "INV-20260605-7524",
+    "issuedUtc": "2026-06-05T23:29:20.3626646Z",
+    "dueUtc": "2026-06-12T23:29:20.3626845Z",
+    "shipmentMethodId": "c6d1b7a7-09f5-4d2a-8fd5-12e23db2af30",
+    "subtotal": 29.95,
+    "shippingCost": 9.95,
+    "total": 39.90,
+    "paymentStatus": 1
+  }
+]
