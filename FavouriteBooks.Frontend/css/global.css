@@ -1,0 +1,268 @@
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+#guest-nav {
+  background-color: #A8C5A0;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-brand-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0;
+  padding: 10px 0;
+}
+
+.nav-brand {
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0;
+  padding: 15px 0;
+}
+
+.nav-actions {
+  position: absolute;
+  right: 20px;
+}
+
+#cart-btn:hover {
+  background-color: #7BAE7F;
+  transform: scale(1.1);
+  transition: transform 0.2s;
+}
+
+#cart-btn {
+  margin-top: 15px;
+  font-size: 30px;
+  background-color: #A8C5A0;
+  border: 1px solid #A8C5A0;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background-color: #A8C5A0;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+#guest-nav nav ul li a {
+  text-decoration: none;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px 15px;
+  color: black;
+  background: #C5D9C2;
+  font-size: 25px;
+}
+
+#guest-nav nav ul li a.active {
+  background: #F9F6F0;
+  font-weight: bold;
+}
+
+a.active {
+  font-weight: bold;
+}
+
+/* ---- Cart Popout ---- */
+.cart-popout.hidden {
+  display: none;
+}
+
+.cart-popout {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: #E8F5E9;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+
+.cart-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #C8E6C9;
+}
+
+.cart-header h2 {
+  margin: 0;
+  font-size: 22px;
+  color: #2E7D32;
+}
+
+#cart-close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #2E7D32;
+  padding: 5px;
+}
+
+#cart-close-btn:hover {
+  color: #E8955A;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #C8E6C9;
+}
+
+.cart-item-title {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0 0 4px 0;
+}
+
+.cart-item-price {
+  font-size: 13px;
+  color: #555;
+  margin: 0;
+}
+
+.cart-item-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.quantity-btn {
+  background-color: #E8955A;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  width: 26px;
+  height: 26px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.remove-btn {
+  background: none;
+  border: none;
+  color: #e53935;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 0 4px;
+}
+
+.remove-btn:hover {
+  color: #b71c1c;
+}
+
+.cart-footer {
+  margin-top: auto;
+  padding-top: 15px;
+  border-top: 2px solid #C8E6C9;
+}
+
+.cart-footer p {
+  font-size: 16px;
+  font-weight: bold;
+  color: #2E7D32;
+  margin-bottom: 10px;
+}
+
+#checkout-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #E8955A;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#checkout-btn:hover {
+  background-color: #C1440E;
+}
+
+/* ---- Footer ---- */
+#main-footer {
+  background-color: #A8C5A0;
+  color: black;
+  padding: 30px 40px;
+  margin-top: 0;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.footer-brand {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.footer-brand i {
+  margin-right: 8px;
+}
+
+.footer-links h3 {
+  margin: 0 0 10px 0;
+  font-size: 16px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links ul li {
+  margin-bottom: 6px;
+}
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: black;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  font-size: 13px;
+  color: #333;
+}
