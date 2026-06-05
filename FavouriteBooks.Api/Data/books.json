@@ -50,7 +50,7 @@
     "description": "Product and venture management lessons for growing businesses.",
     "format": "Hardcover",
     "price": 29.95,
-    "stockQuantity": 15,
+    "stockQuantity": 14,
     "isActive": true,
     "categoryIds": [
       "cb705433-43ce-4732-9355-4f2558dcf6a9"

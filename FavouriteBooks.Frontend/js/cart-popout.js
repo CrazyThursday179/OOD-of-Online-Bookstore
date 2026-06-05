@@ -17,11 +17,19 @@ function renderCartPopout() {
     <div id="cart-items"></div>
     <div class="cart-footer">
       <p>Total Price: $<span id="cart-total">0.00</span></p>
-      <button id="checkout-btn" type="button">Checkout</button>
+      <button id="checkout-btn" type="button" disabled>Checkout</button> 
     </div>
   `;
 
   document.body.appendChild(popout);
 }
 
+function updateCheckoutButtonState() {
+  const checkoutBtn = document.getElementById('checkout-btn');
+  const cartItems = document.getElementById('cart-items');
+  const hasItems = cartItems && cartItems.children.length > 0;
+  checkoutBtn.disabled = !hasItems;
+}
+
 renderCartPopout();
+updateCheckoutButtonState();

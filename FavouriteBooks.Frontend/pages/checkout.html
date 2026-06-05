@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Checkout - Favourite Books</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/checkout.css">
+  
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4d6.png">
+</head>
+
+<body>
+
+  <header id="guest-nav"></header>
+
+  <main>
+
+    <div id="checkout-container">
+
+      <h1>Checkout</h1>
+
+      <!-- Order Summary -->
+      <div id="cart-summary">
+        <h2>Order Summary</h2>
+        <!-- Cart items dynamically inserted here by checkout.js -->
+        <div id="summary-items"></div>
+        <p id="summary-total">Total: $0.00</p>
+      </div>
+
+      <!-- Checkout Form -->
+      <div id="checkout-form-container">
+
+        <!-- Personal Information -->
+        <div class="personal-section">
+          <h2>Personal Information</h2>
+
+          <!-- Shown for customers only -->
+          <div id="saved-details-toggle" class="hidden">
+            <label>
+              <input type="checkbox" id="use-saved-details">
+              Use saved details
+            </label>
+          </div>
+
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" required>
+
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email">
+        </div>
+
+        <!-- Delivery Address -->
+        <div class="delivery-section">
+          <h2>Delivery Address</h2>
+
+          <!-- Shown for customers only -->
+          <div id="saved-address-toggle" class="hidden">
+            <label>
+              <input type="checkbox" id="use-saved-address">
+              Use saved address
+            </label>
+          </div>
+
+          <label for="street-line-1">Street Line 1:</label>
+          <input type="text" id="street-line-1" required>
+
+          <label for="street-line-2">Street Line 2 <span>(optional)</span>:</label>
+          <input type="text" id="street-line-2">
+
+          <label for="city">City:</label>
+          <input type="text" id="city" required>
+
+          <label for="state">State:</label>
+          <input type="text" id="state" required>
+
+          <label for="postcode">Postcode:</label>
+          <input type="text" id="postcode" required>
+        </div>
+
+        <!-- Shipment Method -->
+        <div class="shipment-section">
+          <h2>Shipment Method</h2>
+          <!-- Shipment options dynamically inserted here by checkout.js -->
+          <div id="shipment-options"></div>
+        </div>
+
+        <!-- Error message shown if validation fails -->
+        <p id="checkout-error" class="error-message hidden"></p>
+
+        <button id="proceed-to-payment-btn" type="button">
+          Proceed to Payment
+        </button>
+
+      </div>
+    </div>
+  </main>
+
+  <footer id="main-footer"></footer>
+
+  <script type="module" src="../js/nav.js"></script>
+  <script type="module" src="../js/footer.js"></script>
+  <script type="module" src="../js/checkout.js"></script>
+
+</body>
+
+</html>

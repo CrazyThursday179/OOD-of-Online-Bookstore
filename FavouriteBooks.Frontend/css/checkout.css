@@ -1,0 +1,146 @@
+main {
+  background-color: #F9F6F0;
+  margin: 0;
+  padding: 20px;
+  margin-bottom: 0;
+  padding-bottom: 40px;
+}
+
+label {
+  font-size: 18px;
+  color: #444;
+  margin-bottom: 8px;
+  margin-top: 5px;
+  display: block;
+}
+
+/* ---- Checkout Form ---- */
+#checkout-container {
+  max-width: 800px;
+  margin: 0 auto;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+#checkout-container h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#checkout-container h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #2E7D32;
+}
+
+/* ---- Order Summary ---- */
+#cart-summary {
+  margin-bottom: 30px;
+  background: #E8F5E9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.summary-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #E0E0E0;
+  color: #444;
+}
+
+.summary-item-title {
+  flex: 1;
+  font-size: 14px;
+}
+
+.summary-item-qty {
+  font-size: 14px;
+  color: #888;
+  margin: 0 15px;
+}
+
+.summary-item-price {
+  font-size: 14px;
+  font-weight: bold;
+  color: #2E7D32;
+}
+
+#summary-total {
+  font-size: 18px;
+  font-weight: bold;
+  color: #2E7D32;
+  margin-top: 15px;
+}
+
+/* ---- Personal Information ---- */
+.personal-section {
+  margin-bottom: 30px;
+  background: #E8F5E9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#first-name, #last-name, #email {
+  width: 95%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: #666;
+}
+
+/* ---- Delivery Address ---- */
+.delivery-section {
+  margin-bottom: 30px;
+  background: #E8F5E9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#street-line-1, #street-line-2, #city, #state, #postcode {
+  width: 95%;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  color: #666;
+}
+
+/* ---- Shipment Methods ---- */
+.shipment-section {
+  margin-bottom: 30px;
+  background: #E8F5E9;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.shipment-option {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+/* ---- Place Order Button ---- */
+#proceed-to-payment-btn {
+  padding: 12px 20px;
+  font-size: 18px;
+  background-color: #E8955A;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#proceed-to-payment-btn:hover {
+  background-color: #C1440E;
+  transform: translateY(-4px);
+}

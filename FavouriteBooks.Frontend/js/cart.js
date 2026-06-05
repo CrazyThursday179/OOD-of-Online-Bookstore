@@ -34,7 +34,7 @@ function renderCart(cart) {
   const cartTotal = document.getElementById('cart-total');
 
   if (!cart || !cart.items || cart.items.length === 0) {
-    cartItems.innerHTML = '<p>Your cart is empty.</p>';
+    cartItems.innerHTML = '<p>Your cart is empty. Add some books to your cart to checkout!</p>';
     cartTotal.textContent = '0.00';
     return;
   }
@@ -64,6 +64,17 @@ function renderCart(cart) {
 }
 
 /**
+ * Updates the state of the checkout button based on the cart contents.
+ * @param {Object} cart - The cart object returned from the backend.
+ */
+function updateCheckoutButtonState(cart) {
+  const checkoutBtn = document.getElementById('checkout-btn');
+  if (!checkoutBtn) return;
+
+  checkoutBtn.disabled = !cart || !cart.items || cart.items.length === 0;
+}
+
+/**
  * Fetches the latest cart from the backend and re-renders it.
  * Keeps the popout visible after updating.
  */
@@ -72,6 +83,7 @@ async function refreshCart() {
     const cart = await getCart();
     renderCart(cart);
     updateCartBadge(cart);
+    updateCheckoutButtonState(cart);
     if (isCartOpen) {
       document.getElementById('cart-popout').classList.remove('hidden');
     }
