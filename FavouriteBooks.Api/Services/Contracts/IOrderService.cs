@@ -9,4 +9,5 @@ public interface IOrderService
     Task<Result<OrderDto>> GetOrderAsync(Guid orderId);
     Task<Result<InvoiceDto>> GetInvoiceAsync(Guid invoiceId);
     Task<IReadOnlyList<OrderDto>> GetAllOrdersAsync();
+    Task<IReadOnlyList<OrderDto>> GetOrdersByEmailAsync(string email);
 }
