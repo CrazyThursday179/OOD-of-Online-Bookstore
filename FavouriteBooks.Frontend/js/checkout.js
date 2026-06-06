@@ -1,4 +1,5 @@
 import { getCart, getShipmentMethods, checkout, getSessionId } from './api.js';
+import { flowStore } from './util.js';
 
 /**
  * Retrieves the current user from localStorage.
@@ -184,9 +185,9 @@ async function handleCheckout() {
   try {
     const result = await checkout(payload);
 
-    // Store order and invoice IDs for the payment page
-    localStorage.setItem('fb_order_id', result.orderId);
-    localStorage.setItem('fb_invoice_id', result.invoiceId);
+    // The checkout endpoint returns { order, invoice } objects, so read the
+    // ids from those nested objects and hand them to the payment page.
+    flowStore.set({ orderId: result.order.id, invoiceId: result.invoice.id });
 
     window.location.href = 'payment.html';
   } catch (err) {
