@@ -91,6 +91,23 @@ public class AdminService(
         return Result<BookDto>.Success(book.ToDto(), "Book stock updated.");
     }
 
+    public async Task<Result<BookDto>> RemoveBookAsync(Guid bookId)
+    {
+        var books = await bookRepository.GetAllAsync();
+        var book = books.FirstOrDefault(item => item.Id == bookId);
+        if (book is null)
+        {
+            return Result<BookDto>.Failure("Book not found.", $"No book exists for id '{bookId}'.");
+        }
+
+        // Soft-remove: deactivate so the book disappears from the catalogue but
+        // existing orders that reference it keep their historical data.
+        book.Deactivate();
+        await bookRepository.SaveAllAsync(books);
+
+        return Result<BookDto>.Success(book.ToDto(), "Book removed from the catalogue.");
+    }
+
     public async Task<IReadOnlyList<OrderDto>> GetOrdersAsync()
     {
         var orders = await orderRepository.GetAllAsync();
@@ -133,6 +150,23 @@ public class AdminService(
         }
 
         await shipmentRepository.SaveAllAsync(shipments);
+
+        // Keep the order's status in step with its shipment so the admin Orders
+        // view reflects dispatch and delivery.
+        var orders = await orderRepository.GetAllAsync();
+        var order = orders.FirstOrDefault(item => item.Id == shipment.OrderId);
+        if (order is not null)
+        {
+            order.Status = request.Status switch
+            {
+                ShipmentStatus.Dispatched => OrderStatus.Dispatched,
+                ShipmentStatus.Delivered => OrderStatus.Delivered,
+                ShipmentStatus.ReadyForDispatch => OrderStatus.ShipmentCreated,
+                _ => order.Status
+            };
+            await orderRepository.SaveAllAsync(orders);
+        }
+
         return Result<ShipmentDto>.Success(shipment.ToDto(), "Shipment status updated.");
     }
 }
