@@ -1,0 +1,24 @@
+/*
+ * orders.css — page-specific styles for the My Orders page.
+ * Shared cards/tables/pills/alerts live in components.css.
+ */
+
+.order-card table {
+  margin: 10px 0 12px;
+}
+
+/* "Pay now" is a link styled to match the primary action button. */
+.pay-now {
+  display: inline-block;
+  background: #E8955A;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 9px 18px;
+  border-radius: 6px;
+}
+
+.pay-now:hover {
+  background: #C1440E;
+}
