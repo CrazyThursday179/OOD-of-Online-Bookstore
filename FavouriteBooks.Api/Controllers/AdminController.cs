@@ -28,6 +28,13 @@ public class AdminController(IAdminService adminService) : ApiControllerBase
         return FromResult(result);
     }
 
+    [HttpDelete("books/{bookId:guid}")]
+    public async Task<IActionResult> RemoveBook(Guid bookId)
+    {
+        var result = await adminService.RemoveBookAsync(bookId);
+        return FromResult(result);
+    }
+
     [HttpPatch("shipments/{shipmentId:guid}/status")]
     public async Task<IActionResult> UpdateShipmentStatus(Guid shipmentId, [FromBody] UpdateShipmentStatusRequest request)
     {
