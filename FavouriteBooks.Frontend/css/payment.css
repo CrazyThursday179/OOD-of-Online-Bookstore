@@ -1,0 +1,16 @@
+/*
+ * payment.css — page-specific styles for the Secure Payment page.
+ * Shared cards/forms/alerts live in components.css; only payment-specific
+ * touches are defined here.
+ */
+
+/* Make the amount owed stand out in the order summary. */
+#sumAmount strong {
+  font-size: 18px;
+  color: #2E7D32;
+}
+
+/* Subtle background so the active method's input group reads as one block. */
+.method-fields {
+  background: #FAFCF9;
+}
