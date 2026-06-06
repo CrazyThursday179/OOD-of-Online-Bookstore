@@ -42,4 +42,9 @@ public class Book
 
         StockQuantity = stockQuantity;
     }
+
+    public void Deactivate()
+    {
+        IsActive = false;
+    }
 }
