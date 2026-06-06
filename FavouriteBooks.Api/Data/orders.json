@@ -31,5 +31,38 @@
     "status": 2,
     "createdUtc": "2026-06-05T23:29:20.3630371Z",
     "paidUtc": null
+  },
+  {
+    "id": "f497af5c-461a-4cfb-be0c-24142910b327",
+    "customerId": null,
+    "guestEmail": "test@email.com.au",
+    "shipmentMethodId": "c6d1b7a7-09f5-4d2a-8fd5-12e23db2af30",
+    "deliveryAddress": {
+      "recipientName": "demo user",
+      "streetLine1": "32 clifford st",
+      "streetLine2": "",
+      "city": "melbourne",
+      "state": "vic",
+      "postcode": "1111",
+      "country": "Australia"
+    },
+    "items": [
+      {
+        "bookId": "348f7825-bd2e-46ea-94fb-c84329d19ec2",
+        "bookTitle": "Clean Architecture",
+        "quantity": 2,
+        "unitPrice": 67.5,
+        "lineTotal": 135.0
+      }
+    ],
+    "subtotal": 135.0,
+    "shippingCost": 9.95,
+    "total": 144.95,
+    "invoiceId": "3ff941b3-4da0-473d-bb73-724017ec5f58",
+    "receiptId": null,
+    "shipmentId": null,
+    "status": 2,
+    "createdUtc": "2026-06-06T02:37:48.3438158Z",
+    "paidUtc": null
   }
 ]

@@ -36,7 +36,7 @@ function getNavLinks(role) {
     return [
       { label: 'Catalogue', href: 'catalogue.html', key: 'catalogue' },
       { label: 'My Orders', href: 'orders.html', key: 'orders' },
-      { label: 'My Account', href: 'account.html', key: 'account' },
+      { label: 'My Account', href: 'user-account.html', key: 'account' },
     ];
   }
 
