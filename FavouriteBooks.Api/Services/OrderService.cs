@@ -183,4 +183,19 @@ public class OrderService(
             .Select(order => order.ToDto())
             .ToList();
     }
+
+    public async Task<IReadOnlyList<OrderDto>> GetOrdersByEmailAsync(string email)
+    {
+        if (string.IsNullOrWhiteSpace(email))
+        {
+            return [];
+        }
+
+        var orders = await orderRepository.GetAllAsync();
+        return orders
+            .Where(order => string.Equals(order.GuestEmail, email.Trim(), StringComparison.OrdinalIgnoreCase))
+            .OrderByDescending(order => order.CreatedUtc)
+            .Select(order => order.ToDto())
+            .ToList();
+    }
 }
