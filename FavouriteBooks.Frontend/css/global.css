@@ -15,7 +15,7 @@ main {
   flex: 1;
 }
 
-#guest-nav {
+#main-nav {
   background-color: #A8C5A0;
   margin: 0;
   padding: 0;
@@ -43,6 +43,55 @@ main {
   right: 20px;
 }
 
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background-color: #A8C5A0;
+  margin: 0;
+  padding: 10px 20px;
+}
+
+#main-nav nav ul li a {
+  text-decoration: none;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  padding: 10px 15px;
+  color: black;
+  background: #C5D9C2;
+  font-size: 25px;
+}
+
+#main-nav nav ul li a.active {
+  background: #F9F6F0;
+  font-weight: bold;
+}
+
+a.active {
+  font-weight: bold;
+}
+
+/* ---- Sign Out Button --- */
+#sign-out-btn {
+  background-color: #E8955A;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-left: 10px;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+#sign-out-btn:hover {
+  background-color: #C1440E;
+  transform: scale(1.1);
+}
+
+/* ---- Cart Button ---- */
 #cart-btn:hover {
   background-color: #7BAE7F;
   transform: scale(1.1);
@@ -79,35 +128,6 @@ main {
 
 .cart-badge.hidden {
   display: none;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  background-color: #A8C5A0;
-  margin: 0;
-  padding: 10px 20px;
-}
-
-#guest-nav nav ul li a {
-  text-decoration: none;
-  border-bottom: none;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  padding: 10px 15px;
-  color: black;
-  background: #C5D9C2;
-  font-size: 25px;
-}
-
-#guest-nav nav ul li a.active {
-  background: #F9F6F0;
-  font-weight: bold;
-}
-
-a.active {
-  font-weight: bold;
 }
 
 /* ---- Cart Popout ---- */

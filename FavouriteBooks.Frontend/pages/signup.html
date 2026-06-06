@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sign Up - Favourite Books</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/signup.css">
+
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4d6.png">
+</head>
+
+<body>
+
+  <header id="main-nav"></header>
+
+  <main>
+    <div id="signup-container">
+      <h1>Sign Up</h1>
+
+      <form id="signup-form">
+        <label for="first-name">First Name:</label>
+        <input type="text" id="first-name" required>
+
+        <label for="last-name">Last Name:</label>
+        <input type="text" id="last-name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" required>
+
+        <button type="submit">Sign Up</button>
+      </form>
+
+      <p>Already have an account? <a href="login.html">Login here</a>.</p>
+      <p id="signup-error" class="error-message hidden"></p>
+    </div>
+  </main>
+
+  <footer id="main-footer"></footer>
+
+  <script type="module" src="../js/nav.js"></script>
+  <script type="module" src="../js/footer.js"></script>
+  <script type="module" src="../js/signup.js"></script>
+
+</body>
+
+</html>
