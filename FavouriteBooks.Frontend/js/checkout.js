@@ -61,7 +61,7 @@ function renderShipmentMethods(methods) {
 function setupUserFields(user) {
   const savedDetailsToggle = document.getElementById('saved-details-toggle');
   const savedAddressToggle = document.getElementById('saved-address-toggle');
-  const emailField = document.getElementById('email-field');
+  const emailField = document.getElementById('email');
 
   if (user && user.role === 'customer') {
     // Show saved details and address checkboxes for customers
@@ -84,7 +84,7 @@ function setupUserFields(user) {
 
     // Saved address checkbox fills in delivery fields
     document.getElementById('use-saved-address').addEventListener('change', (e) => {
-      const saved = user.savedAddress;
+      const saved = user.defaultAddress;
       if (e.target.checked && saved) {
         document.getElementById('street-line-1').value = saved.streetLine1 || '';
         document.getElementById('street-line-2').value = saved.streetLine2 || '';

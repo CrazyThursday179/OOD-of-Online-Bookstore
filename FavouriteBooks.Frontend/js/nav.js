@@ -65,13 +65,13 @@ function handleSignOut() {
 }
 
 /**
- * Builds and inserts the navigation bar into the #guest-nav element.
+ * Builds and inserts the navigation bar into the #main-nav element.
  * Renders different links based on the current user role.
  * Highlights the active page link automatically.
  * Shows the cart button for all users and sign out only for logged in users.
  */
 function renderNav() {
-  const nav = document.getElementById('guest-nav');
+  const nav = document.getElementById('main-nav');
   if (!nav) return;
 
   const user = getCurrentUser();

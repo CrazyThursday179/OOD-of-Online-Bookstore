@@ -126,7 +126,7 @@ function initCart() {
   refreshCart();
   
   // Use event delegation on the header so the listener survives nav re-renders
-  document.getElementById('guest-nav').addEventListener('click', (e) => {
+  document.getElementById('main-nav').addEventListener('click', (e) => {
     if (e.target.closest('#cart-btn')) {
       openCart();
     }
