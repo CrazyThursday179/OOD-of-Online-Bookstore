@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "id": "7815a8a6-cc48-4155-be91-b951fe1ba22d",
+    "orderId": "28752b86-56a9-4e57-8861-9d835f39bd25",
+    "invoiceId": "e7317870-a6fc-44da-9ded-9ceadfd08e2d",
+    "paymentDetailsId": "c312d940-d91f-44dc-aa41-abc9cd22e9c4",
+    "receiptNumber": "RCT-20260606-7074",
+    "paymentMethodType": 2,
+    "amountPaid": 96.40,
+    "paidUtc": "2026-06-06T09:09:09.552001Z"
+  },
+  {
+    "id": "14b18b7c-fd8b-42a3-b425-b57b709bca8c",
+    "orderId": "5cdcd98f-8870-485a-b2e0-34a7a40322cb",
+    "invoiceId": "52c86ce1-88d8-4ed6-a9b5-07612e0d0339",
+    "paymentDetailsId": "e148236b-cfdf-458e-af33-53410b734a65",
+    "receiptNumber": "RCT-20260606-8439",
+    "paymentMethodType": 2,
+    "amountPaid": 77.45,
+    "paidUtc": "2026-06-06T09:09:09.571867Z"
+  },
+  {
+    "id": "497548c3-1600-46d9-abfc-b802c048fac3",
+    "orderId": "1124fab1-2146-457b-bff3-28aa086d8f29",
+    "invoiceId": "922a880f-efdb-4a9d-b10f-cdab28804fbb",
+    "paymentDetailsId": "06f046d8-fa52-4a56-b205-51654afb33f5",
+    "receiptNumber": "RCT-20260606-9401",
+    "paymentMethodType": 2,
+    "amountPaid": 179.85,
+    "paidUtc": "2026-06-06T09:09:09.590377Z"
+  }
+]
