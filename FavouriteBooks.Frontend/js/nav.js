@@ -20,7 +20,8 @@ function getActivePage() {
   if (path.includes('signup')) return 'signup';
   if (path.includes('account')) return 'account';
   if (path.includes('orders')) return 'orders';
-  return ''; // TODO: Add admin pages once they're decided
+  if (path.includes('admin')) return 'admin';
+  return '';
 }
 
 /**
@@ -41,8 +42,10 @@ function getNavLinks(role) {
   }
 
   if (role === 'admin') {
-    // TODO: update these links once admin pages are decided
+    // Admin keeps a clear separation from the customer storefront: an admin
+    // dashboard link plus a way back to the catalogue.
     return [
+      { label: 'Admin Dashboard', href: 'admin.html', key: 'admin' },
       { label: 'Catalogue', href: 'catalogue.html', key: 'catalogue' },
     ];
   }
@@ -84,8 +87,8 @@ function renderNav() {
     return `<li><a href="${link.href}" class="${isActive}">${link.label}</a></li>`;
   }).join('');
 
-  // Cart is available to all users including guests
-  const cartIcon = `<button id="cart-btn" type="button" aria-label="Open cart">
+  // The customer cart is shown for shoppers, but not for the signed-in admin.
+  const cartIcon = role === 'admin' ? '' : `<button id="cart-btn" type="button" aria-label="Open cart">
     <i class="fa-solid fa-cart-shopping"></i>
     <span id="cart-badge" class="cart-badge hidden">0</span>
   </button>`;
