@@ -27,4 +27,11 @@ public class OrdersController(IOrderService orderService) : ApiControllerBase
         var result = await orderService.GetInvoiceAsync(invoiceId);
         return FromResult(result);
     }
+
+    [HttpGet("mine")]
+    public async Task<IActionResult> GetMyOrders([FromQuery] string email)
+    {
+        var orders = await orderService.GetOrdersByEmailAsync(email);
+        return Ok(orders);
+    }
 }
