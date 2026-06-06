@@ -10,6 +10,7 @@ public interface IAdminService
 {
     Task<Result<BookDto>> AddBookAsync(AdminBookRequest request);
     Task<Result<BookDto>> UpdateBookStockAsync(Guid bookId, UpdateBookStockRequest request);
+    Task<Result<BookDto>> RemoveBookAsync(Guid bookId);
     Task<IReadOnlyList<OrderDto>> GetOrdersAsync();
     Task<Result<ShipmentDto>> UpdateShipmentStatusAsync(Guid shipmentId, UpdateShipmentStatusRequest request);
 }
