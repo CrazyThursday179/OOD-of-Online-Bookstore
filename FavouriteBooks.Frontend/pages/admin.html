@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Admin Dashboard - Favourite Books</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <link rel="stylesheet" href="../css/admin.css">
+
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4d6.png">
+</head>
+
+<body>
+
+  <header id="main-nav"></header>
+
+  <main>
+    <section class="page-head">
+      <h1>Admin Dashboard</h1>
+      <p class="subtitle">Manage the book catalogue and fulfil customer orders.</p>
+    </section>
+
+    <div class="tabs" role="tablist">
+      <button type="button" id="tab-catalogue" class="active">Manage Catalogue</button>
+      <button type="button" id="tab-orders">Orders &amp; Fulfilment</button>
+    </div>
+
+    <!-- ============ CATALOGUE TAB ============ -->
+    <section class="tab-panel active" id="panel-catalogue">
+      <div class="card">
+        <h2>Add a new book</h2>
+        <form id="addBookForm" novalidate>
+          <div class="row">
+            <div class="field grow">
+              <label for="isbn" class="req">ISBN</label>
+              <input type="text" id="isbn" autocomplete="off">
+              <p class="field-error" id="isbn-error"></p>
+            </div>
+            <div class="field grow">
+              <label for="format">Format</label>
+              <input type="text" id="format" placeholder="Hardcover / Paperback / eBook" autocomplete="off">
+              <p class="field-error" id="format-error"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="title" class="req">Title</label>
+            <input type="text" id="title" autocomplete="off">
+            <p class="field-error" id="title-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="author" class="req">Author</label>
+            <input type="text" id="author" autocomplete="off">
+            <p class="field-error" id="author-error"></p>
+          </div>
+
+          <div class="field">
+            <label for="description">Description</label>
+            <textarea id="description" rows="2"></textarea>
+          </div>
+
+          <div class="row">
+            <div class="field grow">
+              <label for="price" class="req">Price (AUD)</label>
+              <input type="number" id="price" min="0" step="0.01">
+              <p class="field-error" id="price-error"></p>
+            </div>
+            <div class="field grow">
+              <label for="stockQuantity" class="req">Stock quantity</label>
+              <input type="number" id="stockQuantity" min="0" step="1">
+              <p class="field-error" id="stockQuantity-error"></p>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Categories</label>
+            <div id="categoryChecks" class="hint">Loading categories...</div>
+          </div>
+
+          <div class="alert" id="addBookAlert"></div>
+
+          <div class="actions">
+            <button type="submit" id="addBookBtn">Add book</button>
+            <button type="reset" class="secondary">Clear form</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="card">
+        <div class="card-head-row">
+          <h2>Catalogue &amp; stock</h2>
+          <button type="button" id="refreshBooksBtn" class="secondary">Refresh</button>
+        </div>
+        <div class="alert" id="stockAlert"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>ISBN</th>
+              <th class="num">Price</th>
+              <th>Stock</th>
+            </tr>
+          </thead>
+          <tbody id="booksBody">
+            <tr><td colspan="5" class="empty-state">Loading books...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ============ ORDERS TAB ============ -->
+    <section class="tab-panel" id="panel-orders">
+      <div class="card">
+        <div class="card-head-row">
+          <h2>Customer orders</h2>
+          <button type="button" id="refreshOrdersBtn" class="secondary">Refresh</button>
+        </div>
+        <div class="alert" id="ordersAlert"></div>
+        <table>
+          <thead>
+            <tr>
+              <th>Created</th>
+              <th>Customer</th>
+              <th class="num">Total</th>
+              <th>Order status</th>
+              <th>Shipment / Fulfilment</th>
+            </tr>
+          </thead>
+          <tbody id="ordersBody">
+            <tr><td colspan="5" class="empty-state">Loading orders...</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer id="main-footer"></footer>
+
+  <script type="module" src="../js/nav.js"></script>
+  <script type="module" src="../js/footer.js"></script>
+  <script type="module" src="../js/admin.js"></script>
+
+</body>
+
+</html>
