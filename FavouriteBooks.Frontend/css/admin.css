@@ -1,0 +1,81 @@
+/*
+ * admin.css — page-specific styles for the Admin Dashboard.
+ * Shared cards/forms/tables/tabs/alerts live in components.css. 
+ * The class names below are applied to the rows the admin JS renders (stock editing, order fulfilment, expandable order details).
+*/
+
+/* Category checkboxes laid out inline under the Add Book form. */
+#categoryChecks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+}
+
+#categoryChecks label {
+  font-weight: normal;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
+
+#categoryChecks input {
+  width: auto;
+}
+
+/* Inline stock editor inside the catalogue table. */
+.stock-cell {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.stock-input {
+  width: 80px;
+}
+
+/* Order fulfilment controls (shipment status select + update). */
+.shipment-control {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.shipment-control .shipment-select {
+  width: auto;
+}
+
+/* Compact action controls inside the catalogue and fulfilment tables. */
+.stock-cell button,
+.shipment-control button {
+  padding: 5px 12px;
+  font-size: 13px;
+}
+
+.shipment-control .shipment-select {
+  padding: 5px 8px;
+  font-size: 13px;
+}
+
+/* Expandable "Details" row for a customer order. */
+.detail-row td {
+  background: #FAFCF9;
+}
+
+/* "Details" is a compact text toggle, not a filled button. */
+.detail-toggle {
+  margin-top: 4px;
+  padding: 0;
+  font-size: 12px;
+  background: none;
+  border: none;
+  color: #2E7D32;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.detail-toggle:hover {
+  background: none;
+  color: #1b5e20;
+}
