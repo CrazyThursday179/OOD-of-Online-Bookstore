@@ -10,5 +10,17 @@
     "shippingCost": 9.95,
     "total": 39.90,
     "paymentStatus": 1
+  },
+  {
+    "id": "3ff941b3-4da0-473d-bb73-724017ec5f58",
+    "orderId": "f497af5c-461a-4cfb-be0c-24142910b327",
+    "invoiceNumber": "INV-20260606-9700",
+    "issuedUtc": "2026-06-06T02:37:48.3437286Z",
+    "dueUtc": "2026-06-13T02:37:48.3437286Z",
+    "shipmentMethodId": "c6d1b7a7-09f5-4d2a-8fd5-12e23db2af30",
+    "subtotal": 135.0,
+    "shippingCost": 9.95,
+    "total": 144.95,
+    "paymentStatus": 1
   }
 ]

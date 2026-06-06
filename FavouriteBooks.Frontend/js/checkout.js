@@ -1,4 +1,4 @@
-import { getCart, getShipmentMethods, checkout } from './api.js';
+import { getCart, getShipmentMethods, checkout, getSessionId } from './api.js';
 
 /**
  * Retrieves the current user from localStorage.
@@ -166,8 +166,9 @@ async function handleCheckout() {
   const recipientName = `${firstName} ${lastName}`;
 
   const payload = {
-    customerId: user ? user.id : null,
-    guestEmail: user ? null : document.getElementById('email').value.trim(),
+    customerId: null,
+    sessionId: getSessionId(),
+    guestEmail: user ? user.email : document.getElementById('email').value.trim(),
     shipmentMethodId,
     deliveryAddress: {
       recipientName,

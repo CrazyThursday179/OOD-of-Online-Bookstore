@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>User Account - Favourite Books</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/user-account.css">
+
+  <link rel="icon" href="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4d6.png">
+</head>
+
+<body>
+
+  <header id="main-nav"></header>
+
+  <main>
+    <div id="user-account-container">
+      <h1>My Account</h1>
+
+      <!-- Display user account information -->
+      <div id="account-info">
+        <p><strong>Name:</strong> <span id="user-name"></span></p>
+        <p><strong>Email:</strong> <span id="user-email"></span></p>
+      </div>
+
+      <!-- Form to add/update delivery information -->
+      <div id="delivery-info-form">
+        <h2>Delivery Information</h2>
+        <form id="delivery-form">
+          <label for="street-line-1">Street Line 1:</label>
+          <input type="text" id="street-line-1">
+
+          <label for="street-line-2">Street Line 2 <span>(optional)</span>:</label>
+          <input type="text" id="street-line-2">
+
+          <label for="city">City:</label>
+          <input type="text" id="city">
+
+          <label for="state">State:</label>
+          <input type="text" id="state">
+
+          <label for="postcode">Postcode:</label>
+          <input type="text" id="postcode">
+
+          <p id="account-error" class="error-message hidden"></p>
+          <button type="submit">Save Changes</button>
+        </form>
+      </div>
+
+      <div class="account-actions">
+        <button id="edit-email-btn" type="button">
+          <i class="fa-solid fa-pen"></i> Edit Email
+        </button>
+        <button id="change-password-btn" type="button">
+          <i class="fa-solid fa-key"></i> Change Password
+        </button>
+        <button id="delete-account-btn" type="button">
+          <i class="fa-solid fa-trash"></i> Delete Account
+        </button>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer id="main-footer"></footer>
+
+  <script type="module" src="../js/nav.js"></script>
+  <script type="module" src="../js/footer.js"></script>
+  <script type="module" src="../js/user-account.js"></script>
+
+</body>
+
+</html>
