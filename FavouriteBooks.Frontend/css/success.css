@@ -1,0 +1,25 @@
+/*
+ * success.css — page-specific styles for the Order Confirmation page.
+ * Shared cards/tables/alerts live in components.css.
+ */
+
+/* Emphasise the paid amount and order total. */
+#rAmount strong,
+#oTotal {
+  color: #2E7D32;
+}
+
+/* The order-summary footer totals sit slightly apart from the line items. */
+#orderCard tfoot td {
+  border-top: 2px solid #C8E6C9;
+}
+
+/* When printing the receipt, hide the page chrome and the lookup/print controls. */
+@media print {
+  #main-nav,
+  #main-footer,
+  #lookupCard,
+  #printBtn {
+    display: none !important;
+  }
+}
