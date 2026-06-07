@@ -29,8 +29,13 @@ The main implemented flow is:
 │  ├─ Services
 │  ├─ FavouriteBooks.Api.csproj
 │  └─ Program.cs
+├─ FavouriteBooks.Frontend
+│  ├─ css
+│  ├─ js
+│  └─ pages
 ├─ NuGet.Config
 └─ README.md
+
 ```
 
 ## What Each Main Folder Is For
@@ -52,6 +57,12 @@ The main implemented flow is:
 
 - `Repositories` and `Infrastructure`
   - JSON storage access and app startup helpers.
+ 
+- `css` and `js`
+  - Stylesheets and JavaScript files for the respected html files
+    
+- `pages`
+  - HTML files for each page
 
 ## Domain Behaviour Highlights
 
@@ -104,6 +115,8 @@ dotnet run --no-launch-profile --project FavouriteBooks.Api/FavouriteBooks.Api.c
 ```
 
 If the app starts normally, it will show a localhost URL such as `http://localhost:5000`.
+
+Following this use the extension `Live Server` on Visual Studio Code. Right Click a html file and select 'Open with Live Server' to display the pages locally.
 
 ## Route Documentation
 
@@ -191,7 +204,7 @@ Useful built-in IDs:
 
 ## Front-End Integration Notes
 
-### Start With Guest Flow First
+### Guest Flow First
 
 There is currently no authentication or login system. The easiest integration path is:
 
@@ -199,7 +212,7 @@ There is currently no authentication or login system. The easiest integration pa
 - identify the cart with `sessionId`
 - keep the `sessionId` stable in local storage or similar client-side storage
 
-For now, front-end teammates should treat `sessionId` as the main user identity for shopping/cart flow.
+For now, front-end treats `sessionId` as the main user identity for shopping/cart flow.
 
 ### Cart Ownership Rule
 
@@ -208,7 +221,7 @@ A cart is identified by either:
 - `customerId`
 - `sessionId`
 
-Guest flow should use `sessionId`.
+Guest flow usees `sessionId`.
 
 Registered-customer flow can be added later using `customerId`, but it is not the best first integration target.
 
@@ -244,8 +257,6 @@ After successful payment, front-end should store:
 
 After successful checkout, the cart is cleared on the backend.
 
-Front-end should not expect the old cart contents to remain after checkout.
-
 ### Response Shape
 
 Many API responses use a `Result` wrapper with fields such as:
@@ -255,7 +266,7 @@ Many API responses use a `Result` wrapper with fields such as:
 - `errors`
 - `data`
 
-Front-end should not rely only on HTTP status codes. It should also read `message` and `errors` and show them in the UI when appropriate.
+Front-end doesn't rely on HTTP status codes. It should also reads `message` and `errors` and show them in the UI when appropriate.
 
 ## Example Payloads
 
@@ -323,55 +334,6 @@ Shipment status values:
 - `3` = `Dispatched`
 - `4` = `Delivered`
 
-## Recommended Front-End Work Order
-
-Front-end teammates should build in this order:
-
-1. `Catalogue page`
-   - fetch books
-   - search books
-   - filter by category
-
-2. `Cart page`
-   - add item
-   - get cart by `sessionId`
-   - update quantity
-   - remove item
-
-3. `Checkout page`
-   - address form
-   - shipment method selection
-   - submit checkout
-
-4. `Payment page`
-   - choose payment method
-   - submit simulated payment
-   - support both `Success` and `Declined` demo paths
-
-5. `Receipt / Success / Shipment page`
-   - show returned receipt details
-   - show shipment status
-
-6. `Minimal admin page`
-   - list orders
-   - update shipment status
-
-## Suggested Front-End Folder Structure
-
-If a separate front-end app is added later, a clean structure would be:
-
-```text
-FavouriteBooks.Frontend/
-├─ src/
-│  ├─ api/
-│  ├─ components/
-│  ├─ pages/
-│  ├─ hooks/
-│  ├─ types/
-│  └─ utils/
-└─ package.json
-```
-
 Recommended API files:
 
 - `api/http.ts`
@@ -414,12 +376,6 @@ For a simple end-to-end verification:
 - No real authentication or login flow is implemented.
 - No real email/notification service is implemented.
 - Sales statistics/reporting are not implemented in this backend version.
-- `CORS` is not configured yet. If the front-end runs on a different localhost port, browser-based API calls may fail until CORS is added.
 
-## Practical Suggestions For Front-End Teammates
-
-- Start with `guest flow`, not registered-customer flow.
-- Treat `DTOs` as the primary field-reference layer.
-- Save and reuse `sessionId`, `orderId`, `invoiceId`, `receiptId`, and `shipmentId`.
 - Use the JSON files in `Data` to verify whether actions were really persisted.
 - Build the success path first, then add failure-state UI for quantity validation, invalid address, and declined payment.
